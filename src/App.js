@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import FeedbackList from "./components/FeedbackList.jsx";
+import Header from "./components/Header.jsx";
+import FeedbackData from "./data/FeedbackData.js";
 
-function App() {
+const App = () => {
+  const [feedbackData, setFeedbackData] = useState(FeedbackData);
+
+  const deleteFeedbackData = (id) => {
+    if (window.confirm("Are you sure you want to delete?")) {
+      setFeedbackData(feedbackData.filter((item) => item.id !== id));
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <FeedbackList
+          feedback={feedbackData}
+          handleFeedback={deleteFeedbackData}
+        />
+      </div>
+    </>
   );
-}
-
+};
+Header.defaultProps = {
+  text: "This is default",
+};
 export default App;
