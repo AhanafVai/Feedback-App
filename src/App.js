@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutIconLink from "./components/AboutIconLink.jsx";
 
 import FeedbackForm from "./components/FeedbackForm.jsx";
 import FeedbackList from "./components/FeedbackList.jsx";
@@ -24,6 +25,7 @@ const App = () => {
                   <FeedbackForm />
                   <FeedbackStats />
                   <FeedbackList />
+                  <AboutIconLink />
                 </>
               }
             />
