@@ -15,7 +15,13 @@ This project goes over all of the fundamentals of React including...
 - Context API
 - HTTP Requests
 
-# Usage
+# Build with -
+
+- react
+- router
+- vanilla css
+- semantic HTML
+- http api
 
 ### Install dependencies
 
